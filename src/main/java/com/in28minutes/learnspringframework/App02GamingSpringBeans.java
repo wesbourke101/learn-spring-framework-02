@@ -9,8 +9,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 
-// I need to add somethings some I can push lol
+// I need to add some things some I can push lol
 // This is another test to try creating branches and merging to the main.
+// testing to see how to switch between branches without committing.
 
 @Configuration
 @ComponentScan("com.in28minutes.learnspringframework.game")
