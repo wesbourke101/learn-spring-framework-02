@@ -49,6 +49,8 @@ public class LazyInitializationLauncherApplication {
             context.getBean(ClassB.class).doSomeThing();
         }
 
+        System.out.println("Trying to get merge to a branch from the master");
+
     }
 
 }
