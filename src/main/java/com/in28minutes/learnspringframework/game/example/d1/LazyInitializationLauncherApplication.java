@@ -23,6 +23,8 @@ public class LazyInitializationLauncherApplication {
                 Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
         }
         System.out.println("Just need to try something.");
+        System.out.println("Trying the ssh on my Windows desktop.");
+        System.out.println("super test.");
     }
 
 }
