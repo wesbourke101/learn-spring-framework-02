@@ -3,9 +3,32 @@ package com.in28minutes.learnspringframework.game.example.d1;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 
+@Component
+class ClassA {
+
+}
+
+@Component
+@Lazy
+class ClassB {
+
+    private ClassA classA;
+
+    public ClassB(ClassA classA) {
+        System.out.println("some logic");
+        this.classA = classA;
+    }
+
+    public void doSomeThing() {
+        System.out.println("My method just did something.");
+    }
+
+}
 
 // I need to add some things some I can push lol
 // This is another test to try creating branches and merging to the main.
@@ -20,11 +43,12 @@ public class LazyInitializationLauncherApplication {
 
         try(var context = new AnnotationConfigApplicationContext
                 (LazyInitializationLauncherApplication.class)) {
-                Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
+
+            System.out.println("Initialization of context completed");
+
+            context.getBean(ClassB.class).doSomeThing();
         }
-        System.out.println("Just need to try something.");
-        System.out.println("Trying the ssh on my Windows desktop.");
-        System.out.println("super test.");
+
     }
 
 }
